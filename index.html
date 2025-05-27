@@ -5,15 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D Spline</title>
+
+    <!-- ✅ AOS CSS (You were missing this) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
+
 
 <body>
     <img class="image-gradient" src="/Images/gradient.png" alt="gradient" />
     <div class="layer-blur"></div>
 
     <div class="container">
-        <header>
+        <header data-aos="fade-down" data-aos-duration="1200">
             <h1 class="logo">Test 3D</h1>
             <nav>
                 <a href="#">ABOUT</a>
@@ -22,12 +28,22 @@
             <button class="btn-signing">TEST</button>
         </header>
 
-        <spline-viewer class="robot-3d"
-            url="https://prod.spline.design/pxUqrD2wrdzYxD1o/scene.splinecode"></spline-viewer>
+        <div class="spline-wrapper">
+            <div class="loading-spinner" id="loader">
+                <div class="spinner"></div>
+                <p>Loading 3D...</p>
+            </div>
 
-        <!-- ✅ New Article Section -->
-        <section class="test-3d-article">
+            <spline-viewer class="robot-3d" id="splineViewer"
+                url="https://prod.spline.design/pxUqrD2wrdzYxD1o/scene.splinecode">
+            </spline-viewer>
+        </div>
+
+
+        <!-- Article Section -->
+        <section class="test-3d-article" data-aos="zoom-in" data-aos-duration="1200">
             <h2>Explore 3D with Spline</h2>
+
             <p>
                 Discover how real-time 3D graphics can elevate your design and interaction.
                 With Spline, you can embed interactive scenes directly into your website,
@@ -37,7 +53,21 @@
         </section>
     </div>
 
+
+
+    <!--*********** Script Section ***********-->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.97/build/spline-viewer.js"></script>
+
+    <script>
+        AOS.init();
+
+        // Fallback: hide loader after 1.2 seconds
+        setTimeout(() => {
+            const loader = document.getElementById("loader");
+            if (loader) loader.style.display = "none";
+        }, 1200); // 1.2 seconds
+    </script>
+
 </body>
 
 </html>

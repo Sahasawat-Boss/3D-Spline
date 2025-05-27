@@ -126,11 +126,16 @@ nav a:hover {
 }
 
 .robot-3d {
-    width: 100%;              /* Take full width of the parent container */
-    max-width: 100%;          /* Don’t exceed parent’s width */
-    aspect-ratio: 16 / 9;     /* Maintain a widescreen ratio */
-    height: auto;             /* Let height be determined by aspect ratio */
-    margin: 4rem 0;           /* Add vertical spacing */
+    width: 100%;
+    /* Take full width of the parent container */
+    max-width: 100%;
+    /* Don’t exceed parent’s width */
+    aspect-ratio: 16 / 9;
+    /* Maintain a widescreen ratio */
+    height: auto;
+    /* Let height be determined by aspect ratio */
+    margin: 4rem 0;
+    /* Add vertical spacing */
 }
 
 /* Optional: fine-tune height for very small screens */
@@ -147,5 +152,32 @@ nav a:hover {
     .robot-3d {
         /* Change aspect ratio to 1:1 (square) for better fit on small screens */
         aspect-ratio: 1 / 1;
+    }
+}
+
+.loading-spinner {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Simple spinner animation */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
