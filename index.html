@@ -2,31 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D Spline</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <img class="image-gradient" src="/Images/gradient.png" alt="gradient">
+    <img class="image-gradient" src="/Images/gradient.png" alt="gradient" />
     <div class="layer-blur"></div>
 
     <div class="container">
         <header>
             <h1 class="logo">Test 3D</h1>
-
             <nav>
                 <a href="#">ABOUT</a>
                 <a href="#">DOC</a>
             </nav>
-
             <button class="btn-signing">TEST</button>
         </header>
+
+        <spline-viewer class="robot-3d"
+            url="https://prod.spline.design/pxUqrD2wrdzYxD1o/scene.splinecode"></spline-viewer>
+
+        <!-- ✅ New Article Section -->
+        <section class="test-3d-article">
+            <h2>Explore 3D with Spline</h2>
+            <p>
+                Discover how real-time 3D graphics can elevate your design and interaction.
+                With Spline, you can embed interactive scenes directly into your website,
+                offering users a rich visual experience.
+            </p>
+            <a href="https://spline.design/" target="_blank" class="learn-more-btn">Learn More</a>
+        </section>
     </div>
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.97/build/spline-viewer.js"></script>
-    <spline-viewer url="https://prod.spline.design/pxUqrD2wrdzYxD1o/scene.splinecode"></spline-viewer>
 </body>
 
 </html>
